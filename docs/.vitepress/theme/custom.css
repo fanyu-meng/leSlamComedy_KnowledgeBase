@@ -1,4 +1,151 @@
 /*
+ * 乐咔品牌色：黑 #000000  白 #FFFFFF  黄 #FFD500
+ */
+
+:root {
+  /* 品牌黄（替换默认蓝色） */
+  --vp-c-brand-1: #FFE566;
+  --vp-c-brand-2: #FFD500;
+  --vp-c-brand-3: #CCAA00;
+  --vp-c-brand-soft: rgba(255, 213, 0, 0.14);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-note-1: var(--vp-c-brand-1);
+  --vp-c-note-2: var(--vp-c-brand-2);
+  --vp-c-note-3: var(--vp-c-brand-3);
+  --vp-c-note-soft: var(--vp-c-brand-soft);
+
+  /* 主按钮：黄底黑字 */
+  --vp-button-brand-text: #000000;
+  --vp-button-brand-bg: #FFD500;
+  --vp-button-brand-border: #FFD500;
+  --vp-button-brand-hover-text: #000000;
+  --vp-button-brand-hover-bg: #E6C000;
+  --vp-button-brand-hover-border: #E6C000;
+  --vp-button-brand-active-text: #000000;
+  --vp-button-brand-active-bg: #CCAA00;
+  --vp-button-brand-active-border: #CCAA00;
+
+  /* 次按钮：白底黑字黑边 */
+  --vp-button-alt-text: #000000;
+  --vp-button-alt-bg: #FFFFFF;
+  --vp-button-alt-border: #000000;
+  --vp-button-alt-hover-text: #000000;
+  --vp-button-alt-hover-bg: #F5F5F5;
+  --vp-button-alt-hover-border: #000000;
+
+  /* 首页标题 */
+  --vp-home-hero-name-color: #FFD500;
+  --vp-home-hero-name-background: transparent;
+}
+
+.dark {
+  --vp-c-brand-1: #FFE566;
+  --vp-c-brand-2: #FFD500;
+  --vp-c-brand-3: #FFD500;
+  --vp-c-brand-soft: rgba(255, 213, 0, 0.18);
+
+  --vp-c-bg: #000000;
+  --vp-c-bg-alt: #111111;
+  --vp-c-bg-soft: #1a1a1a;
+
+  --vp-c-text-1: #FFFFFF;
+  --vp-c-text-2: #E0E0E0;
+  --vp-c-text-3: #AAAAAA;
+
+  --vp-home-hero-name-color: #FFD500;
+
+  --vp-button-alt-text: #FFFFFF;
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-border: #FFFFFF;
+  --vp-button-alt-hover-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* 导航栏：白底黑字，激活项黄色下划线 */
+.VPNavBar {
+  border-bottom: 2px solid #FFD500;
+}
+
+.VPNavBarTitle .title {
+  color: #000000;
+  font-weight: 700;
+}
+
+.dark .VPNavBarTitle .title {
+  color: #FFFFFF;
+}
+
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink:hover {
+  color: #CCAA00 !important;
+}
+
+.dark .VPNavBarMenuLink.active,
+.dark .VPNavBarMenuLink:hover {
+  color: #FFD500 !important;
+}
+
+/* 侧边栏激活项 */
+.VPSidebarItem.is-active > .item .link {
+  color: #CCAA00;
+  font-weight: 600;
+}
+
+.dark .VPSidebarItem.is-active > .item .link {
+  color: #FFD500;
+}
+
+/* 首页功能卡片 hover */
+.VPFeature:hover .box {
+  border-color: #FFD500;
+}
+
+.VPFeature .title {
+  color: #000000;
+}
+
+.dark .VPFeature .title {
+  color: #FFFFFF;
+}
+
+/* 页脚：黑底白字，呼应 logo 黑色背景 */
+.VPFooter {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.VPFooter a {
+  color: #FFD500 !important;
+}
+
+.VPFooter a:hover {
+  color: #FFE566 !important;
+}
+
+/* 链接 */
+.vp-doc a {
+  color: #CCAA00;
+}
+
+.vp-doc a:hover {
+  color: #FFD500;
+}
+
+.dark .vp-doc a {
+  color: #FFD500;
+}
+
+/* 搜索框聚焦 */
+.DocSearch-Button:focus,
+.DocSearch-Button:hover {
+  box-shadow: inset 0 0 0 2px #FFD500;
+}
+
+/*
  * 默认主题把首页大图绝对定位在容器中央，页面缩放或窗口较窄时会和标题文字重叠。
  * 这里改成正常文档流布局，任何缩放比例下都不会重叠。
  */
@@ -26,7 +173,25 @@
   border-radius: 24px;
 }
 
-/* 导航栏的方形 logo 加一点圆角更精致 */
+/* 导航栏 logo 圆角 */
 .VPNavBarTitle .logo {
   border-radius: 6px;
+}
+
+/* 首页副标题 */
+.VPHome .VPHero .tagline {
+  color: #333333;
+}
+
+.dark .VPHome .VPHero .tagline {
+  color: #E0E0E0;
+}
+
+/* 首页 LeSlam Comedy 副标题保持黑色/白色 */
+.VPHome .VPHero .text {
+  color: #000000;
+}
+
+.dark .VPHome .VPHero .text {
+  color: #FFFFFF;
 }
